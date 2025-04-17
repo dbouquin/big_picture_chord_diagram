@@ -122,7 +122,7 @@ const processData = () => {
     const methodNodes = Array.from(methods);
     
     // Combine all nodes in the proper grouping order
-    const nodes = [...categoryNodes, ...applicationNodes, ...methodNodes];
+    const nodes = [...applicationNodes, ...methodNodes, ...categoryNodes];
     
     // Create mapping of node names to indices
     const nodeIndices = {};
@@ -192,7 +192,7 @@ const highlightConnections = (nodeName) => {
     
     // Set up dimensions
     const width = 700;
-    const height = 600;
+    const height = 800;
     const outerRadius = Math.min(width, height) * 0.5 - 60;
     const innerRadius = outerRadius - 20;
     
@@ -210,7 +210,7 @@ const highlightConnections = (nodeName) => {
         .sortSubgroups(d3.descending)
         .sortChords(d3.descending);
     
-    // Disable sorting of groups to maintain our grouping by type
+    // Disable sorting of groups to maintain grouping by type
     chord.sortGroups(null);
     
     const chords = chord(matrix);
@@ -353,7 +353,7 @@ const createChordDiagram = (selectedProject = 'all') => {
     
     // Set up dimensions
     const width = 700;
-    const height = 600;
+    const height = 800;
     const outerRadius = Math.min(width, height) * 0.5 - 60;
     const innerRadius = outerRadius - 20;
     
