@@ -1,6 +1,56 @@
 // Global variable to store our project data
 let projectData = null;
 
+// Create a reusable function for text formatting that we can call from both places
+function formatNodeText(d, text, nodes, nodeTypes, outerRadius) {
+    const nodeName = nodes[d.index];
+    
+    // Split the text into words
+    const words = nodeName.split(/\s+/);
+    let lines = [];
+    let currentLine = [];
+    let currentLength = 0;
+    
+    // Distribute words across lines
+    words.forEach(word => {
+        // If adding this word would exceed our limit, start a new line
+        if (currentLine.length > 0 && currentLength + word.length + 1 > 15) {
+            lines.push(currentLine.join(' '));
+            currentLine = [word];
+            currentLength = word.length;
+        } else {
+            currentLine.push(word);
+            currentLength += (currentLine.length > 1 ? 1 : 0) + word.length;
+        }
+    });
+    
+    // Add the last line if it has content
+    if (currentLine.length > 0) {
+        lines.push(currentLine.join(' '));
+    }
+    
+    // If we only have one line, just set the text directly
+    if (lines.length === 1) {
+        text.text(lines[0]);
+        return;
+    }
+    
+    // For multiple lines, create tspans
+    const lineHeight = 1.1; // ems
+    
+    // Calculate vertical adjustment for centering
+    const totalHeight = (lines.length - 1) * lineHeight;
+    const startY = -totalHeight / 2;
+    
+    // Add each line as a tspan
+    lines.forEach((line, i) => {
+        text.append('tspan')
+            .attr('x', 0)
+            .attr('dy', i === 0 ? startY + 'em' : lineHeight + 'em')
+            .text(line);
+    });
+}
+
 // Load data from JSON file
 async function loadData() {
     try {
@@ -235,7 +285,6 @@ const highlightConnections = (nodeName) => {
     // Add labels to arcs
     arcGroup.append("text")
         .each(d => { d.angle = (d.startAngle + d.endAngle) / 2; })
-        .attr("dy", ".35em")
         .attr("class", "node-text")
         .attr("transform", d => {
             return `rotate(${d.angle * 180 / Math.PI - 90})
@@ -243,10 +292,9 @@ const highlightConnections = (nodeName) => {
                 ${d.angle > Math.PI ? "rotate(180)" : ""}`;
         })
         .attr("text-anchor", d => d.angle > Math.PI ? "end" : "start")
-        .text(d => {
-            const nodeText = nodes[d.index];
-            // Truncate long names
-            return nodeText.length > 25 ? nodeText.substring(0, 22) + '...' : nodeText;
+        .each(function(d) {
+            const text = d3.select(this);
+            formatNodeText(d, text, nodes, nodeTypes, outerRadius);
         });
     
     // Draw the chords
@@ -418,7 +466,6 @@ const createChordDiagram = (selectedProject = 'all') => {
     // Add labels to arcs
     arcGroup.append("text")
         .each(d => { d.angle = (d.startAngle + d.endAngle) / 2; })
-        .attr("dy", ".35em")
         .attr("class", "node-text")
         .attr("transform", d => {
             return `rotate(${d.angle * 180 / Math.PI - 90})
@@ -426,10 +473,9 @@ const createChordDiagram = (selectedProject = 'all') => {
                 ${d.angle > Math.PI ? "rotate(180)" : ""}`;
         })
         .attr("text-anchor", d => d.angle > Math.PI ? "end" : "start")
-        .text(d => {
-            const nodeName = nodes[d.index];
-            // Truncate long names
-            return nodeName.length > 25 ? nodeName.substring(0, 22) + '...' : nodeName;
+        .each(function(d) {
+            const text = d3.select(this);
+            formatNodeText(d, text, nodes, nodeTypes, outerRadius);
         });
     
     // Draw the chords
@@ -494,5 +540,3 @@ const createChordDiagram = (selectedProject = 'all') => {
 
 // Initialize when the DOM is ready
 document.addEventListener('DOMContentLoaded', loadData);
-
-
