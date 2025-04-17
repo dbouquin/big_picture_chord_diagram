@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Picture</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .chord-container {
+            flex: 1;
+        }
+        .impact-panel {
+            width: 300px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            margin-left: 20px;
+        }
+        .impact-panel h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        .impact-panel.hidden {
+            display: none;
+        }
+        .node-category {
+            fill: #8dd3c7;
+        }
+        .node-application {
+            fill: #fb8072;
+        }
+        .node-method {
+            fill: #80b1d3;
+        }
+        .node-text {
+            font-size: 10px;
+            pointer-events: none;
+        }
+        .chord {
+            opacity: 0.8;
+        }
+        .chord.faded {
+            opacity: 0.1;
+        }
+        .arc.faded path {
+            opacity: 0.3;
+        }
+        .arc.faded text {
+            opacity: 0.3;
+        }
+        .reset-btn {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .reset-btn:hover {
+            background-color: #e0e0e0;
+        }
+        .title-container {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .hover-instruction {
+            text-align: center;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-container">
+        <h1>Big Picture</h1>
+        <p class="subtitle">Visualizing connections between project categories, applications, and methods</p>
+    </div>
+    <div class="container">
+        <div class="chord-container" id="chord-diagram"></div>
+        <div class="impact-panel hidden" id="impact-panel">
+            <h3>Impact</h3>
+            <div id="impact-text"></div>
+            <button id="reset-button" class="reset-btn">Return to All Projects</button>
+        </div>
+    </div>
+    
+    <!-- Load JavaScript files -->
+    <script src="chord_diagram.js"></script>
+</body>
+</html>

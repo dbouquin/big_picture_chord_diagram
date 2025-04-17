@@ -1,0 +1,64 @@
+{
+  "solutions": [
+    {
+      "category": "Machine Learning Cloud Architecture",
+      "application": "On demand machine learning environment",
+      "method": "Data Engineering",
+      "impact": "Decrease AWS cloud design and setup time from months to weeks"
+    },
+    {
+      "category": "Data Alignment",
+      "application": "Historical policy data, survey data, grants data and more that creates a ground truth data source for analytitcs",
+      "method": "Machine Learning Algorithms",
+      "impact": "Data driven decisions from consistent historical ground truth data"
+    },
+    {
+      "category": "Harvest and aggregate publicly available data sources",
+      "application": "Build databases from publicly available data and make these databases readily accessible via dashboards with enhanced search features",
+      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "impact": "Reduce setup and time to completion time by 50%"
+    },
+    {
+      "category": "Sentiment Analysis",
+      "application": "Automated extraction, summaries and sentiment scores",
+      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "impact": "Automated sentiment summaries of various documents dramatically reducing staff hours and driving better data driven decisions"
+    },
+    {
+      "category": "AI Summaries",
+      "application": "Summaries are placed into a database and accessible via a dashboard",
+      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "impact": "Reduced employee hours manually reading and summarizing documents"
+    },
+    {
+      "category": "Data Governance",
+      "application": "A templatized database governance model that can be readily deployed. This would include a data catalog and dictionary, all of which are accessible via a dashboard or web interface",
+      "method": "Policy Development",
+      "impact": "Best practices that ensure database longevity and accuracy. Avoid costly rebuilding and staff hours fixing and diagnosing errors."
+    },
+    {
+      "category": "AI Powered Dashboards",
+      "application": "Dashboards that summarize and illustrate various irregularities",
+      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "impact": "Prevention and diagnostic system that prevents potential problems before they exist."
+    },
+    {
+      "category": "Grants Data Quality Improvement",
+      "application": "Eliminate grants data errors and irregularities within the Palantir system.",
+      "method": "Statistical Learners",
+      "impact": "Prevent costly rework tasks by eliminating data errors"
+    },
+    {
+      "category": "AI Agents",
+      "application": "Readily available answers to audits and data questions.",
+      "method": "Agentic AI with RAG and Knowledge Graphs",
+      "impact": ""
+    },
+    {
+      "category": "AI Integrations",
+      "application": "AI solutions that minimize human involvement",
+      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "impact": ""
+    }
+  ]
+}
