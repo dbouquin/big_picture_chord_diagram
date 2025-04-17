@@ -1,63 +1,63 @@
 {
   "solutions": [
     {
-      "category": "Machine Learning Cloud Architecture",
+      "category": "ML Cloud Architecture",
       "application": "On-demand ML environment",
-      "method": "Data Engineering",
+      "method": ["Data Engineering"],
       "impact": "Reduce AWS setup time from months to weeks"
     },
     {
       "category": "Data Alignment",
       "application": "Unified ground truth data source",
-      "method": "Machine Learning Algorithms",
+      "method": ["ML Algorithms"],
       "impact": "Enable data-driven decisions from consistent historical data"
     },
     {
-      "category": "Harvest and aggregate publicly available data sources",
+      "category": "Harvest and Aggregate Public Data Sources",
       "application": "Accessible databases with enhanced search",
-      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "method": ["ML Algorithms", "Generative AI"],
       "impact": "Reduce setup time by 50%"
     },
     {
       "category": "Sentiment Analysis",
       "application": "Automated document analysis",
-      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "method": ["ML Algorithms", "Generative AI"],
       "impact": "Reduce staff hours and improve decision-making"
     },
     {
       "category": "AI Summaries",
       "application": "Dashboard-accessible document summaries",
-      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "method": ["ML Algorithms", "Generative AI"],
       "impact": "Eliminate manual document processing"
     },
     {
       "category": "Data Governance",
       "application": "Deployable governance model with catalog and dictionary",
-      "method": "Policy Development",
+      "method": ["Policy Development"],
       "impact": "Ensure database accuracy and prevent costly errors"
     },
     {
       "category": "AI Powered Dashboards",
       "application": "Anomaly detection interfaces",
-      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "method": ["ML Algorithms", "Generative AI"],
       "impact": "Prevent issues before they occur"
     },
     {
       "category": "Grants Data Quality Improvement",
       "application": "Error elimination in Palantir system",
-      "method": "Statistical Learners",
+      "method": ["Statistical Learners"],
       "impact": "Prevent rework by eliminating data errors"
     },
     {
       "category": "AI Agents",
       "application": "Automated audit and data question responses",
-      "method": "Agentic AI with RAG and Knowledge Graphs",
+      "method": ["Agentic AI with RAG and Knowledge Graphs"],
       "impact": "Reduce response time to inquiries"
     },
     {
       "category": "AI Integrations",
       "application": "Automated workflow solutions",
-      "method": "Machine Learning Algorithms, Artificial Intelligence (Generative AI)",
+      "method": ["ML Algorithms", "Generative AI"],
       "impact": "Minimize manual intervention"
     }
   ]

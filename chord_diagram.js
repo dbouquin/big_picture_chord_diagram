@@ -40,9 +40,13 @@ const processData = () => {
         applications.add(solution.application);
         nodeTypes[solution.application] = 'application';
         
-        // Method might contain multiple methods separated by commas
-        const methodsArray = solution.method.split(', ');
+        // Method handling - check if it's an array or a string that needs to be split
+        let methodsArray = Array.isArray(solution.method) ? 
+            solution.method : solution.method.split(', ');
+        
         methodsArray.forEach(method => {
+            // Trim any whitespace from the method name
+            method = method.trim();
             methods.add(method);
             nodeTypes[method] = 'method';
             
@@ -490,3 +494,5 @@ const createChordDiagram = (selectedProject = 'all') => {
 
 // Initialize when the DOM is ready
 document.addEventListener('DOMContentLoaded', loadData);
+
+
