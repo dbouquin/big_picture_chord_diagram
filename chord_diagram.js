@@ -1,3 +1,5 @@
+// Higher level very rough draft visualization of the nature of data surge team's work
+
 // Global variable to store our project data
 let projectData = null;
 
